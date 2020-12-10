@@ -3,8 +3,8 @@ if __name__ = "__main__":
     import sys
     ac = len(sys.argv) - 1
     if ac == 0:
-        print("{} arguments.".format(0))
+        print("{:d} arguments.".format(0))
     else:
-        print("{} {}:".format(ac, "argument" if ac == 1 else "arguments"))
+        print("{:d} {}:".format(ac, "argument" if ac == 1 else "arguments"))
         for i in range(1, ac + 1):
-            print("{}: {}".format(i, sys.argv[i]))
+            print("{:d}: {}".format(i, sys.argv[i]))
