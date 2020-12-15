@@ -11,16 +11,16 @@ int is_palindrome(listint_t **head)
 	int arr[5000];
 	int m, i = 0;
 
-	if (!head || !*head)
+	if (head == NULL)
 		return (0);
-	if ((*head)->next)
-		return (1);
 	while (aux->next)
 	{
 		arr[i] = aux->n;
 		aux = aux->next;
 		i++;
 	}
+	if (i <= 1)
+		return (1);
 	for (m = 0; m < i; m++, i--)
 		if (arr[m] != arr[i - 1])
 			return (0);
