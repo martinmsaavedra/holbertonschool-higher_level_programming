@@ -11,9 +11,9 @@ int is_palindrome(listint_t **head)
 	int arr[5000];
 	int m, i = 0;
 
-	if (!head)
+	if (!head || !*head)
 		return (0);
-	if (!*head || (*head)->next)
+	if ((*head)->next)
 		return (1);
 	while (aux)
 	{
