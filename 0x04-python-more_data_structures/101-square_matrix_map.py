@@ -1,2 +1,2 @@
 def square_matrix_map(matrix=[]):
-    return list(map(list,(map(lambda x: x*x, matrix[]))))
+    return list(map(lambda x: list(map(lambda y: y * y, x)), matrix))
