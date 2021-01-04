@@ -6,4 +6,4 @@ def safe_print_division(a, b):
         tot = None
     finally:
         print("Inside result: {}".format(tot if tot is not None else "None"))
-    return total
+    return tot
