@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+def safe_print_division(a, b):
+    try:
+        total = a / b
+    except (ValueError, ZeroDivisionError):
+        total = None
+    finally:
+        print("Inside result: {}".
+              format(total if total is not None else "None"))
+    return total
