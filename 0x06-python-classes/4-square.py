@@ -1,17 +1,16 @@
 #!/usr/bin/python3
+"""Square with area and size setter"""
 
 
 class Square:
     """Square class"""
     def __init__(self, size=0):
         """Square constructor"""
-        try:
-            int(size)
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            self.__size = size
-        except TypeError:
+        if type(size) != int:
             raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
 
     def area(self):
         """Returns area of square"""
@@ -25,9 +24,7 @@ class Square:
     @size.setter
     def size(self, value):
         """Defines size of square"""
-        try:
-            int(value)
-        except:
+        if type(value) != int:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
