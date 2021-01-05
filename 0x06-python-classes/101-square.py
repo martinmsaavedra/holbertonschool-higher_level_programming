@@ -1,18 +1,27 @@
 #!/usr/bin/python3
+"""Square Class with area, print and str methods"""
 
 
 class Square:
     """Square class"""
     def __init__(self, size=0, position=(0, 0)):
-        """Square constructor"""
-        try:
-            int(size)
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            self.__size = size
-            self.__position = position
-        except TypeError:
+        if type(size) != int:
             raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
+        if len(position) == 2:
+            if type(position[0]) != int\
+               or type(position[1]) != int or type(position) != tuple:
+                raise TypeError("position must be a tuple of \
+                2 positive integers")
+            if type(position[0]) is int and type(position[1]) is int:
+                if int(position[0]) < 0 or int(position[1]) < 0:
+                    raise TypeError("position must be a tuple of \
+                    2 positive integers")
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = position
 
     @property
     def position(self):
@@ -21,17 +30,14 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Defines position of square"""
-        if type(position) is not tuple:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        elif len(position) != 2:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        elif type(position[0]) != int or type(position[1]) != int:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        elif position[0] < 0 or position[1] < 0:
-            raise TypeError('position must be a tuple of 2 positive integers')
+        if len(value) == 2:
+            if value[0] < 0 or value[1] < 0 or type(value[0]) != int or\
+               type(value[1]) != int or type(value) != tuple:
+                raise TypeError("position must be a tuple of \
+                2 positive integers")
         else:
-            self.__position = position
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """Returns area of square"""
@@ -45,9 +51,7 @@ class Square:
     @size.setter
     def size(self, value):
         """Defines size of square"""
-        try:
-            int(value)
-        except:
+        if type(value) != int:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
@@ -55,16 +59,17 @@ class Square:
 
     def my_print(self):
         """Prints Square"""
-        for b in range(self.position[1]):
-            print()
-        for m in range(self.__size):
-            for a in range(self.position[0]):
-                print(" ", end="")
-            for i in range(self.__size):
-                print("#", end="")
-            print()
         if self.__size == 0:
             print()
+        else:
+            for b in range(self.position[1]):
+                print()
+            for m in range(self.__size):
+                for a in range(self.position[0]):
+                    print(" ", end="")
+                for i in range(self.__size):
+                    print("#", end="")
+                print()
 
     def __str__(self):
         """Prints Square"""
