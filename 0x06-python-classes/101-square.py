@@ -89,6 +89,4 @@ class Square:
                 squa += "#"
             if i < (self.__size - 1):
                 squa += '\n'
-        if self.__size == 0:
-            squa = '\n'
         return squa
