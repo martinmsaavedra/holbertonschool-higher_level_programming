@@ -1,18 +1,17 @@
 #!/usr/bin/python3
+"""Square class with area, print and str methods"""
 
 
 class Square:
     """Square class"""
     def __init__(self, size=0, position=(0, 0)):
         """Square constructor"""
-        try:
-            int(size)
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            self.__size = size
-            self.__position = position
-        except TypeError:
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        if type(size) != int:
             raise TypeError("size must be an integer")
+        self.__size = size
+        self.__position = position
 
     @property
     def position(self):
@@ -45,9 +44,7 @@ class Square:
     @size.setter
     def size(self, value):
         """Defines size of square"""
-        try:
-            int(value)
-        except:
+        if type(value) != int:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
