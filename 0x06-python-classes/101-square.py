@@ -79,9 +79,6 @@ class Square:
     def __str__(self):
         """Prints Square"""
         squa = ""
-        if self.__size == 0:
-            squa = '\n'
-            return squa
         for b in range(self.position[1]):
             squa += '\n'
         for i in range(self.__size):
