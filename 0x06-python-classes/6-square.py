@@ -5,8 +5,22 @@
 class Square:
     """Square class"""
     def __init__(self, size=0, position=(0, 0)):
-        """Square constructor"""
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = size
+        if len(position) == 2:
+            if type(position[0]) != int\
+               or type(position[1]) != int or type(position) != tuple:
+                raise TypeError("position must be a tuple of \
+2 positive integers")
+            if type(position[0]) is int and type(position[1]) is int:
+                if int(position[0]) < 0 or int(position[1]) < 0:
+                    raise TypeError("position must be a tuple of \
+2 positive integers")
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     @property
@@ -16,15 +30,14 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Defines position of square"""
-        if type(position) != tuple or len(position) != 2:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        elif type(position[0]) != int or type(position[1]) != int:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        elif position[0] < 0 or position[1] < 0:
-            raise TypeError('position must be a tuple of 2 positive integers')
+        if len(value) == 2:
+            if value[0] < 0 or value[1] < 0 or type(value[0]) != int or\
+               type(value[1]) != int or type(value) != tuple:
+                raise TypeError("position must be a tuple of \
+2 positive integers")
         else:
-            self.__position = position
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """Returns area of square"""
