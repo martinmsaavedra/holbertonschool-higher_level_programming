@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
+
 class Square:
     """Square class"""
-    def __init__(self, size):
+    def __init__(self, size=0):
         """Square constructor"""
         try:
             int(size)
@@ -14,7 +15,7 @@ class Square:
 
     def area(self):
         """Returns area of square"""
-        return  self.__size * self.__size
+        return self.__size * self.__size
 
     @property
     def size(self):
@@ -26,8 +27,17 @@ class Square:
         """Defines size of square"""
         try:
             int(value)
-        except ValueError:
+        except:
             raise TypeError("size must be an integer")
         if value < 0:
-                raise ValueError("size must be >= 0")
+            raise ValueError("size must be >= 0")
         self.__size = value
+
+    def my_print(self):
+        """Prints Square"""
+        for i in range(self.__size):
+            for x in range(self.__size):
+                print("#", end="")
+            print()
+        if self.__size == 0:
+            print()
