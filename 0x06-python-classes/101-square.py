@@ -76,7 +76,7 @@ class Square:
                 squa += " "
             for m in range(self.__size):
                 squa += "#"
-            if i < self.__size -1:
+            if i < (self.__size - 1):
                 squa += '\n'
         if self.__size == 0:
             squa = '\n'
