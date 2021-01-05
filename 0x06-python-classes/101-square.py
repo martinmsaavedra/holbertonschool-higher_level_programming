@@ -67,7 +67,6 @@ class Square:
         """print an square"""
         if self.__size == 0:
             print()
-            return
         for y in range(self.__position[1]):
             print()
         for i in range(self.__size):
@@ -79,10 +78,10 @@ class Square:
 
     def __str__(self):
         """Prints Square"""
-        if self.__size == 0:
-            print()
-            return
         squa = ""
+        if self.__size == 0:
+            squa = '\n'
+            return squa
         for b in range(self.position[1]):
             squa += '\n'
         for i in range(self.__size):
