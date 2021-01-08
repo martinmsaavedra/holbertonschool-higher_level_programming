@@ -1,0 +1,72 @@
+The ``3-say_my_name`` module
+======================
+Using ``say_my_name``
+-------------------
+
+Importing the function from the module:
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Checking for module docstring:
+>>> m = __import__("3-say_my_name").__doc__
+>>> len(m) > 1
+True
+    
+Checking for function docstring:
+>>> f = __import__("3-say_my_name").say_my_name.__doc__
+>>> len(f) > 1
+True
+
+Checking for function normal run:
+>>> say_my_name("Martin", "Saavedra")
+My name is Martin Saavedra
+
+Checking for function no last name:
+>>> say_my_name("Martin")
+My name is Martin 
+
+None as first Name:
+>>> say_my_name(None)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+Number as first Name:
+>>> say_my_name(1, "Saavedra")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+List as first Name:
+>>> say_my_name(["Juan"], "Saavedra")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+List as second Name:
+>>> say_my_name("Saavedra", ["Juan"])
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+NaN as first Name:
+>>> say_my_name("", "Saavedra")
+My name is  Saavedra
+
+NaN as first Name:
+>>> say_my_name("", "")
+My name is  
+
+Booleno as argument:
+>>> say_my_name(True, "Zapallo")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+Booleno as argument:
+>>> say_my_name(str(65), "Zapallo")
+My name is 65 Zapallo
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
