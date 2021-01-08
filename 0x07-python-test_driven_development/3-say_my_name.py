@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""TDD module"""
+"""Say my Name Module"""
 
 if __name__ == "__main__":
     import doctest
