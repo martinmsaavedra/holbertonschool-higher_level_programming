@@ -16,7 +16,7 @@ The ``0-add_integer`` module
 98
 
 >>> add_integer(2.5, 3.1)
-5.6
+5
 
 >>> add_integer(5, None)
 Traceback (most recent call last):
