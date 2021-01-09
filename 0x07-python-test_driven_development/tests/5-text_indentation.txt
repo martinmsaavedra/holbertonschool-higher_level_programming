@@ -1,0 +1,76 @@
+The ``5-text_indentation`` module
+=================================
+Using ``text_indentation``
+--------------------------
+
+Importing the function from the module:
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Checking for module docstring:
+>>> m = __import__("5-text_indentation").__doc__
+>>> len(m) > 1
+True
+    
+Checking for function docstring:
+>>> f = __import__("5-text_indentation").text_indentation.__doc__
+>>> len(f) > 1
+True
+
+>>> text_indentation(5)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(str(65)+str(63))
+6563
+
+>>> text_indentation("Hola. Comoo estas??")
+Hola.
+<BLANKLINE>
+ Comoo estas?
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("Hola?", "Como estas...:___??")
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation(EOF)
+Traceback (most recent call last):
+    ...
+NameError: name 'EOF' is not defined
+
+>>> text_indentation("hello")
+hello
+
+>>> text_indentation("?\n\n.\n\n:")
+?
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+.
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>

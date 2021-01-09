@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Print Square Module"""
 
+
 def print_square(size):
     """
     Prints the Square of length size with the character #
