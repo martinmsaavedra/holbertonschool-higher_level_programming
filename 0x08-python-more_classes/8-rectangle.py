@@ -5,11 +5,11 @@
 class Rectangle:
     """Rectangle Class"""
     number_of_instances = 0
-    print_symbol = "#"    
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Init constructor"""
-        if type(width) != int: 
+        if type(width) != int:
             raise TypeError("width must be an integer")
         if type(height) != int:
             raise TypeError("height must be an integer")
@@ -18,10 +18,9 @@ class Rectangle:
         if height < 0:
             raise ValueError("height must be >= 0")
         self.__height = height
-        self.__width= width
+        self.__width = width
         type(self).number_of_instances += 1
 
-        
     def __str__(self):
         '''Print the rectangle with the character #'''
         rec = ""
@@ -36,14 +35,14 @@ class Rectangle:
 
     def __repr__(self):
         '''Print the rectangle with the character #'''
-        return "Rectangle({}, {})".format(self.__width, self.__height)      
-    
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
     @property
     def width(self):
         """Width Getter
         """
         return self.__width
-    
+
     @property
     def height(self):
         """Height Getter
@@ -54,7 +53,7 @@ class Rectangle:
     def width(self, value):
         """Width Setter
         """
-        if type(value) != int: 
+        if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -64,7 +63,7 @@ class Rectangle:
     def height(self, value):
         """Height Setter
         """
-        if type(value) != int: 
+        if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
@@ -73,7 +72,7 @@ class Rectangle:
     def area(self):
         '''Calculates area of rectangle'''
         return self.__width * self.__height
-    
+
     def perimeter(self):
         '''Calculates perimeter of rectangle'''
         if self.__width == 0 or self.__height == 0:
@@ -85,14 +84,14 @@ class Rectangle:
         '''deletes instance'''
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
-        
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Method to compare 2 rectangles based by the area"""
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle") 
+            raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() == rect_2.area() or rect_1.area() > rect_2.area():
             return rect_1
         else:
