@@ -12,6 +12,12 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_integer(self):
         self.assertAlmostEqual(max_integer([10, 2, 3, 4]),10)
     
+    def test_max_integer_middle(self):
+        self.assertAlmostEqual(max_integer([10, 2, 20, 3, 4]),20)
+    
+    def test_max_integer_one(self):
+        self.assertAlmostEqual(max_integer([10]),10)
+
     def test_isNone(self):
         self.assertAlmostEqual(max_integer(),None) 
     
