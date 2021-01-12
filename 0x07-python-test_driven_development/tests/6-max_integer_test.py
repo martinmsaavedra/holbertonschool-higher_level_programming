@@ -10,7 +10,7 @@ class TestMaxInteger(unittest.TestCase):
     Performfs test cases
     """
     def test_max_integer(self):
-        self.assertAlmostEqual(max_integer([1, 2, 3, 4]),4)
+        self.assertAlmostEqual(max_integer([10, 2, 3, 4]),10)
     
     def test_isNone(self):
         self.assertAlmostEqual(max_integer(),None) 
