@@ -40,7 +40,7 @@ General
 ### More Info
 Documentation is now mandatory! Each module, class, and method must contain docstring as comments. Example Google Style Python Docstrings
 
-Tasks
+## Tasks
 
 ### 0. My first square 
 
