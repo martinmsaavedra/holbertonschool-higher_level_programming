@@ -1,6 +1,5 @@
 # 0x06. Python - Classes and Objects
 ## General
-----
     Why Python programming is awesome
     What is OOP
     “first-class everything”
@@ -23,7 +22,6 @@
     How to use the getattr function
 
 ## Requirements
-----
 General
 
     Allowed editors: vi, vim, emacs
@@ -39,12 +37,10 @@ General
     All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
     A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 
-More Info
-----
+### More Info
 Documentation is now mandatory! Each module, class, and method must contain docstring as comments. Example Google Style Python Docstrings
 
 Tasks
-----
 
 ### 0. My first square 
 
