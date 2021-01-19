@@ -1,0 +1,8 @@
+The ``7-base_geometry`` module
+======================
+Using ``base_geometry``
+-------------------
+
+Importing the function from the module:
+>>> base_geometry = __import__("7-base_geometry").BaseGeometry
+    
