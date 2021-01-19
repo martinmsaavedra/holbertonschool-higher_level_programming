@@ -33,3 +33,11 @@
 - The prototypes of all your functions should be included in your header file called lists.h
 - Don’t forget to push your header file
 - All your header files should be include guarded
+
+# Authors
+Made by [Martin Saavedra](https://github.com/martinmasaavedra) to Holberton School 2020
+
+Social Networks
+-------------------
+- [Linkedin](https://www.linkedin.com/in/martinmaximosaavedra/)
+- [Twitter](https://twitter.com/martin_mmax)
