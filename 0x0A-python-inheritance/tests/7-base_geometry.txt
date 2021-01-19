@@ -103,3 +103,19 @@ TypeError: String1 must be an integer
 Traceback (most recent call last):
 ...
 TypeError: String1 must be an integer
+
+
+>>> bg.integer_validator("Test", {1: 2})
+Traceback (most recent call last):
+...
+TypeError: Test must be an integer
+
+>>> bg.integer_validator("Test", (4, ))
+Traceback (most recent call last):
+...
+TypeError: Test must be an integer
+
+>>> bg.integer_validator("Test", {3, 4})
+Traceback (most recent call last):
+...
+TypeError: Test must be an integer
