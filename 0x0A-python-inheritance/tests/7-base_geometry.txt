@@ -1,8 +1,72 @@
-The ``7-base_geometry`` module
+The ``7-base_geometry.txt`` module
 ======================
-Using ``base_geometry``
+Using ``BaseGeometry``
 -------------------
 
 Importing the function from the module:
->>> base_geometry = __import__("7-base_geometry").BaseGeometry
+
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry    
+
+Checking for module docstring:
+>>> m = __import__("7-base_geometry").__doc__
+>>> len(m) > 1
+True    
+
+Checking for function docstring:
+
+>>> f = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(f) > 1
+TrueNo Arguments passed:
     
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Correct Output:
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("hola", 10)2 Strings Output:
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("hola", "chau")
+Traceback (most recent call last):
+...
+TypeError: hola must be an integer3 Arguments Output:
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("hola", "chau", 55)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+2 Integers Output:
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator(68, 55)Empty String Output:
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("", 55)
+
+None Output:
+>>> bg = BaseGeometry()
+>>> bg.integer_validator(None, None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+
+0 Output:
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("Hola", 0)
+Traceback (most recent call last):
+...
+TypeError: Hola must be greater than 0
+
+Less than 0 Output:
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("Hola", -1)
+Traceback (most recent call last):
+...
+TypeError: Hola must be greater than 0
