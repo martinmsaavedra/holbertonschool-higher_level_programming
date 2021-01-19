@@ -27,13 +27,17 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 Correct Output:
 
 >>> bg = BaseGeometry()
->>> bg.integer_validator("hola", 10)2 Strings Output:
+>>> bg.integer_validator("hola", 10)
+
+2 Strings Output:
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("hola", "chau")
 Traceback (most recent call last):
 ...
-TypeError: hola must be an integer3 Arguments Output:
+TypeError: hola must be an integer
+
+3 Arguments Output:
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("hola", "chau", 55)
