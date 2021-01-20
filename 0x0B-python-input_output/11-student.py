@@ -27,6 +27,6 @@ class Student:
 
     def reload_from_json(self, json):
         '''remplace attributes for Json attributes given'''
-        for key, value in json.items:
+        for key, value in json.items():
             if key in self.__dict__:
                 self.__dict__[key] = value
