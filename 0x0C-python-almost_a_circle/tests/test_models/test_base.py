@@ -16,6 +16,7 @@ class TestCodeFormat(unittest.TestCase):
         self.assertEqual(result.total_errors, 1,
                          "Found code style errors (and warnings).")
 
+
 class test_base(unittest.TestCase):
     """Tests for base class"""
     def no_doc(item):
@@ -34,7 +35,7 @@ class test_base(unittest.TestCase):
         base = Base()
         self.assertEqual(base.id, 1)
         base2 = Base([1, 2, 3])
-        self.assertEqual(base2.id, [1,2,3])
+        self.assertEqual(base2.id, [1, 2, 3])
         base3 = Base("ate")
         self.assertEqual(base3.id, "ate")
         base4 = Base(None)
@@ -43,15 +44,17 @@ class test_base(unittest.TestCase):
         self.assertEqual(base5.id, True)
 
     def test_to_json_string(self):
-        """Test function to_json_string that converts a dict or list of dicts to a string"""
+        """Test function to_json_string that
+        converts a dict or list of dicts to a string"""
         square = Square(1, 2, 3)
         self.assertEqual(Base.to_json_string(None), "[]")
         r1 = Rectangle(10, 7, 2, 8, 1)
         r1_dict = r1.to_dictionary()
-        self.assertEqual(r1_dict, {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8})
+        self.assertEqual(r1_dict, {'x': 2, 'width': 10,
+                                   'id': 1, 'height': 7, 'y': 8})
         with self.assertRaises(TypeError):
             Base.to_json_string()
-        
+
     def test_to_dictionary(self):
         """Test if the output is correct: it returns the class properties"""
         r1 = Rectangle(10, 7, 0, 0)
@@ -88,7 +91,7 @@ class test_base(unittest.TestCase):
         self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r1))
 
     def test_create_rectangle_new(self):
-        """Test if new values are assigned to the new instance""" 
+        """Test if new values are assigned to the new instance"""
         r1 = Rectangle(3, 5, 1, 2, 7)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)

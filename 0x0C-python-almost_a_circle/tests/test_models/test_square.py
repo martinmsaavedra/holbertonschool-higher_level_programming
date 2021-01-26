@@ -8,12 +8,13 @@ import pep8
 class TestCodeFormat(unittest.TestCase):
     """Test for pep8"""
     def test_pep8_conformance(self):
-        """Test that we conform to PEP8."""
+        '''Test that we conform to PEP8.'''
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['square.py'])
         self.assertEqual(result.total_errors, 1,
-        
                          "Found code style errors (and warnings).")
+
+
 class Test_Square(unittest.TestCase):
     """Tests for square"""
 
@@ -38,17 +39,17 @@ class Test_Square(unittest.TestCase):
     def test_wrong_parameter(self):
         """Test for non int arguments in square"""
         with self.assertRaises(TypeError):
-            square = Square([1,2,3,4], "5")
+            square = Square([1, 2, 3, 4], "5")
             square = Square(1, None)
             square = Square()
             square = Square(None)
             square = Square([1, 2, 3])
             square = Square("str", 2)
-            square = Square({"id":1, "od":2})
+            square = Square({"id": 1, "od": 2})
 
     def test_size(self):
         """Test for size values"""
-        square = Square(1,2,3)
+        square = Square(1, 2, 3)
         with self.assertRaises(ValueError):
             square.size = -1
             square.size = 1e10000000
@@ -62,13 +63,13 @@ class Test_Square(unittest.TestCase):
             square.size = True
             square.size = "Atenea"
             square.size = [1, 2, 3]
-            square.size = {"id":1, "od":2}
+            square.size = {"id": 1, "od": 2}
             square.size = 2.34
             square.size = (1, 2, 3)
             square.size = float(NaN)
 
     def test_negative_square(self):
-        """Test for size negative value""" 
+        """Test for size negative value"""
         with self.assertRaises(ValueError):
             square = Square(-2)
 
@@ -99,7 +100,7 @@ class Test_Square(unittest.TestCase):
             square.x = 3.14
             square.x = None
             square.x = True
-            square.x = {"id":1, "od":2}
+            square.x = {"id": 1, "od": 2}
             square.x = (1, 2, 3)
             square.x = float(NaN)
 
@@ -107,13 +108,13 @@ class Test_Square(unittest.TestCase):
         """Test non int values in y"""
         square = Square(2)
         with self.assertRaises(TypeError):
-            square.y = [1, 2 ,3]
+            square.y = [1, 2, 3]
             square.y = {1, 2}
             square.y = "2"
             square.y = 3.14
             square.y = None
             square.y = True
-            square.y = {"id":1, "od":2}
+            square.y = {"id": 1, "od": 2}
             square.y = (1, 2, 3)
             square.y = float(NaN)
 
@@ -124,7 +125,7 @@ class Test_Square(unittest.TestCase):
 
     def test_str(self):
         """Test str for square"""
-        square = Square(5,0,0,4)
+        square = Square(5, 0, 0, 4)
         self.assertEqual(square.__str__(), '[Square] (4) 0/0 - 5')
 
     def test_update(self):
@@ -136,14 +137,13 @@ class Test_Square(unittest.TestCase):
         square.update(size=2, y=5)
 
     def test_update_wrong(self):
-        """Test update with value errors""" 
+        """Test update with value errors"""
         square = Square(5)
         with self.assertRaises(ValueError):
             square.update(0)
             square.update(-1, 2, 3)
             square.update(size=-1, x=2, y=3)
             square.update(size=1e1000000)
-
 
     def test_update_type(self):
         """Test update with Type error"""
@@ -152,7 +152,7 @@ class Test_Square(unittest.TestCase):
             square.update("ate", 2, 3)
             square.update(1, 2, 3, 4, 5, 7)
             square.update([1, 2, 3])
-            square.update({"id":1, "od":2})
+            square.update({"id": 1, "od": 2})
             square.update(2.3, 2, 3)
             square.update((1, 2, 3))
             square.update(None, 3, 4)
