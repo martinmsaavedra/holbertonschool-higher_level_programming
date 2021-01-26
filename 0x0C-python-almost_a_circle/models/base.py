@@ -128,8 +128,10 @@ class Base:
                 csv_reader = csv.reader(f, delimiter=',')
                 for args in csv_reader:
                     if cls.__name__ is "Rectangle":
-                        dictionary = {"id": int(args[0]), "width": int(args[1]), "height": int(
-                            args[2]), "x": int(args[3]), "y": int(args[4])}
+                        dictionary = {"id": int(args[0]),
+                                      "width": int(args[1]),
+                                      "height": int(args[2]),
+                                      "x": int(args[3]), "y": int(args[4])}
                     elif cls.__name__ is "Square":
                         dictionary = {"id": int(args[0]), "size": int(
                             args[1]), "x": int(args[2]), "y": int(args[3])}
