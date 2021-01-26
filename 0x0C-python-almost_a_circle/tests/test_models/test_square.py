@@ -10,7 +10,15 @@ class TestCodeFormat(unittest.TestCase):
     def test_pep8_conformance(self):
         '''Test that we conform to PEP8.'''
         pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['square.py'])
+        result = pep8style.check_files(['../../square.py'])
+        self.assertEqual(result.total_errors, 1,
+                         "Found code style errors (and warnings).")
+
+    def test_pep8_conformance_test(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(
+            ['../../tests/test_models/test_square.py'])
         self.assertEqual(result.total_errors, 1,
                          "Found code style errors (and warnings).")
 
@@ -160,6 +168,18 @@ class Test_Square(unittest.TestCase):
             square.update(float(NaN))
             square.update(size=[1, 2, 3])
             square.update(2, x="ate", y=3)
+
+    def test_display(self):
+            """test the display function"""
+            import io
+            import contextlib
+
+            inst = Square(3)
+            with io.StringIO() as fd:
+                with contextlib.redirect_stdout(fd):
+                    inst.display()
+                    rec = fd.getvalue()
+            self.assertEqual(rec, '###\n###\n###\n')
 
 
 if __name__ == '__main__':

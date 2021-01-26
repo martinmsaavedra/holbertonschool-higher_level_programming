@@ -6,6 +6,7 @@ import unittest
 from models.square import Square
 from models.rectangle import Rectangle
 import pep8
+from os import path
 
 
 class TestCodeFormat(unittest.TestCase):
@@ -13,6 +14,14 @@ class TestCodeFormat(unittest.TestCase):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['../../models/base.py'])
+        self.assertEqual(result.total_errors, 1,
+                         "Found code style errors (and warnings).")
+
+    def test_pep8_conformance_test(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(
+            ['../../tests/test_models/test_base.py'])
         self.assertEqual(result.total_errors, 1,
                          "Found code style errors (and warnings).")
 
@@ -138,3 +147,38 @@ class test_base(unittest.TestCase):
         s1_dictionary = s1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertNotEqual(s1, s2)
+
+    def test_load_from_file(self):
+        """With a class"""
+        r1 = Rectangle(2, 3)
+        if not path.exists("Rectangle.json"):
+            lists = Rectangle.load_from_file()
+            self.assertEqual(lists, [])
+
+    def test_load_from_existing_file(self):
+        """Tests if function loads from existing file"""
+        r1 = Rectangle(3, 4)
+        r1_json = Rectangle.save_to_file([r1])
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual([r1.to_dictionary()], json.load(f))
+
+    def test_load_from_existing_file_(self):
+        """Tests if function loads from existing file"""
+        r1 = Square(3)
+        r1_json = Square.save_to_file([r1])
+        with open("Square.json", "r") as f:
+            self.assertEqual([r1.to_dictionary()], json.load(f))
+
+    def test_load_from_file_(self):
+        """With a class"""
+        r1 = Square(2)
+        if not path.exists("Square.json"):
+            lists = Square.load_from_file()
+            self.assertEqual(lists, [])
+
+    def test_save_to_file(self):
+            """Tests if function saves into a file"""
+            s1 = Square(3)
+            s1_json = Square.save_to_file([s1])
+            with open("Square.json", "r") as f:
+                self.assertEqual([s1.to_dictionary()], json.load(f))
