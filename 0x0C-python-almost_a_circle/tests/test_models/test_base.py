@@ -69,7 +69,7 @@ class test_base(unittest.TestCase):
         r1 = Rectangle(10, 7, 0, 0)
         r1_dict = r1.to_dictionary()
         self.assertIs(type(r1_dict), dict)
-    
+
     def test_to_json_string(self):
         """Test for conversion of Base subclasses to json representation.
         Assumes that subclasses have implemented `to_dictionary()` method.
@@ -177,8 +177,8 @@ class test_base(unittest.TestCase):
             self.assertEqual(lists, [])
 
     def test_save_to_file(self):
-            """Tests if function saves into a file"""
-            s1 = Square(3)
-            s1_json = Square.save_to_file([s1])
-            with open("Square.json", "r") as f:
-                self.assertEqual([s1.to_dictionary()], json.load(f))
+        """Tests if function saves into a file"""
+        s1 = Square(3)
+        s1_json = Square.save_to_file([s1])
+        with open("Square.json", "r") as f:
+            self.assertEqual([s1.to_dictionary()], json.load(f))
