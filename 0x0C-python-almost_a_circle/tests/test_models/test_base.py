@@ -70,22 +70,6 @@ class test_base(unittest.TestCase):
         r1_dict = r1.to_dictionary()
         self.assertIs(type(r1_dict), dict)
     
-    def test_json(self):
-        """ function test_json """
-        self.base = Base()
-        dic = {"test": 1, "test2": 2, "test3": 3}
-        lidi = [dic]
-        json_dict = self.base.to_json_string(lidi)
-        self.assertTrue(isinstance(json_dict, str))
-        dic1 = {"test": 1, "test2": 2, "test3": 3}
-        lidi = [dic, dic1]
-        json_dict = self.base.to_json_string(lidi)
-        self.assertTrue(isinstance(json_dict, str))
-        json_dict = self.base.to_json_string([])
-        self.assertEqual(json_dict, "[]")
-        json_dict = self.base.to_json_string(None)
-        self.assertEqual(json_dict, "[]")
-
     def test_to_json_string(self):
         """Test for conversion of Base subclasses to json representation.
         Assumes that subclasses have implemented `to_dictionary()` method.
