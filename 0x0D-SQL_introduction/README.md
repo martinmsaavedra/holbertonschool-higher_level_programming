@@ -26,7 +26,7 @@ General
     A README.md file, at the root of the folder of the project, is mandatory
     The length of your files will be tested using wc
 
-nstall MySQL 5.7 on Ubuntu 14.04 LTS
+Install MySQL 5.7 on Ubuntu 14.04 LTS
 
         $ echo 'deb http://repo.mysql.com/apt/ubuntu/ trusty mysql-5.7-dmr' | sudo tee -a /etc/apt/sources.list
         $ sudo apt-get update
@@ -59,5 +59,6 @@ Connect to your MySQL server:
         Bye
         $
 
-If you have some issues to upgrade to 5.7, don’t hesitate to cleanup your server of any MySQL packages: sudo apt-get remove --purge mysql-server mysql-client mysql-common
+If you have some issues to upgrade to 5.7, don’t hesitate to cleanup your server of any MySQL packages: 
+        sudo apt-get remove --purge mysql-server mysql-client mysql-common
 
