@@ -1,0 +1,2 @@
+-- Import the database dump from hbtn_0d_tvshows to your MySQL server: download
+--  lists all shows contained in hbtn_0d_tvshows that have at least one genre linked.
