@@ -1,6 +1,6 @@
-0x12. JavaScript - Warm up
+# 0x12. JavaScript - Warm up
 
-Background Context
+## Background Context
 
 JavaScript is used for many things. At Holberton School, you will use JavaScript for 2 reasons:
 
@@ -10,7 +10,7 @@ JavaScript is used for many things. At Holberton School, you will use JavaScript
 For the moment, and for learning all basic concepts of this language, we will do some scripting. After, we will make our AirBnB project dynamic by using Javascript and JQuery.
 Resources
 
-Read or watch:
+## Read or watch:
 
     Writing JavaScript Code
     Variables
@@ -26,7 +26,7 @@ Read or watch:
     JavaScript Tutorial
     Modern JS
 
-Learning Objectives
+## Learning Objectives
 
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 General
@@ -48,7 +48,7 @@ General
     How to manipulate dictionary
     How to import a file
 
-Requirements
+## Requirements
 General
 
     Allowed editors: vi, vim, emacs
@@ -60,14 +60,12 @@ General
     All your files must be executable
     The length of your files will be tested using wc
 
-More Info
+## More Info
 Install Node 10
 
-    '$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -'
-    '$ sudo apt-get install -y nodejs'
+    $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    $ sudo apt-get install -y nodejs
 
-Install semi-standard
+## Install semi-standard
 
-Documentation
-
-    '$ sudo npm install semistandard --global'
+    $ sudo npm install semistandard --global
