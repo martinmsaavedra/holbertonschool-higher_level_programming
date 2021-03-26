@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-# Defines a State model.
-# Inherits from SQLAlchemy Base and links to the MySQL table states.
-
+'''Defines a State model.'''
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base

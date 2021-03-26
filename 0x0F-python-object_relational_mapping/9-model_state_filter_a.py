@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Lists all State objects that contain the letter a from the database hbtn_0e_6_usa'''
 from model_state import Base, State
 import sys
 from sqlalchemy import (create_engine)
