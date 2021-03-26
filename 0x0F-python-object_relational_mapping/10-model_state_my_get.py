@@ -2,7 +2,7 @@
 '''Prints the State object with the name passed as argument from the database hbtn_0e_6_usa'''
 from model_state import Base, State
 import sys
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
