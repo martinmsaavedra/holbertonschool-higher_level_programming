@@ -15,7 +15,7 @@ if __name__ == "__main__":
                          db=MY_DB, charset="utf8")
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE\
-            BINARY name = '{}'".format(state))
+            BINARY name = '{}'".format(STATE))
     query_row = cur.fetchall()
     for row in query_row:
         print(row)
