@@ -14,7 +14,7 @@ if __name__ == "__main__":
                          user=MY_USER, passwd=MY_PASS,
                          db=MY_DB, charset="utf8")
     cur = db.cursor()
-    txtSQL = "SELECT name FROM cities WHERE state_id IN\
+    txtSQL = "SELECT name FROM cities WHERE BINARY state_id IN\
         (SELECT id FROM states WHERE name=%(state)s) ORDER BY state_id ASC"
     cur.execute(txtSQL, {'state': STATE})
     query_row = cur.fetchall()

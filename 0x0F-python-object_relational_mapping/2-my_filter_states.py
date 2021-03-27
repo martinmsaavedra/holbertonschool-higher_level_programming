@@ -14,8 +14,8 @@ if __name__ == "__main__":
                          user=MY_USER, passwd=MY_PASS,
                          db=MY_DB, charset="utf8")
     cur = db.cursor()
-    cur.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(STATE))
+    cur.execute("SELECT * FROM states WHERE\
+            BINARY name = '{}'".format(state))
     query_row = cur.fetchall()
     for row in query_row:
         print(row)

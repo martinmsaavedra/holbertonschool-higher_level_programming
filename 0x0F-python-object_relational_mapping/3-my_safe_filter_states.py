@@ -15,7 +15,7 @@ if __name__ == "__main__":
                          user=MY_USER, passwd=MY_PASS,
                          db=MY_DB, charset="utf8")
     cur = db.cursor()
-    txtSQL = "SELECT * FROM states WHERE name = %(state)s ORDER BY id ASC"
+    txtSQL = "SELECT * FROM states WHERE BINARY name = %(state)s ORDER BY id ASC"
     cur.execute(txtSQL, {'state': STATE})
 
     query_row = cur.fetchall()
