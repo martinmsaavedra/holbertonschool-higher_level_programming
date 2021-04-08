@@ -1,0 +1,2 @@
+#!/bin/bash
+curl 35.231.45.150:5000 -sI | grep "Content-Length" | cut -d " " -f2
