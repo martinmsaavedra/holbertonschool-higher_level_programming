@@ -4,14 +4,16 @@ def find_peak(list_of_integers):
     ''' finds a peak in a list '''
     if not list_of_integers:
         return None
-    if len(list_of_integers) == 2:
-        return max(list_of_integers)
     if len(list_of_integers) == 1:
         return list_of_integers[0]
-    for i in range(1, len(list_of_integers) - 1):
-        numbers = list_of_integers[i]
-        nei_1 = list_of_integers[i - 1]
-        nei_2 = list_of_integers[i + 1]
-        if numbers >= nei_1 and numbers >= nei_2:
-            peak = numbers
-    return numbers
+    if len(list_of_integers) == 2:
+        return max(list_of_integers)
+
+    mid_size = int(len(list_of_integers) /2)
+    middle = list_of_integers[mid_size]
+    if middle > list_of_integers[mid_size - 1] and middle > list_of_integers[mid_size + 1]:
+        return middle
+    elif middle < list_of_integers[mid_size - 1]:
+        return find_peak(list_of_integers[:mid_size])
+    else:
+        return find_peak(list_of_integers[mid_size + 1:])
