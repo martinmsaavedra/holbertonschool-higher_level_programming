@@ -12,7 +12,7 @@ if __name__ == "__main__":
     list_commits = response.json()
     for index, elem in enumerate(list_commits):
         if index <= 9:
-            sha = elem.get('parents')[0].get('sha')
+            sha = elem.get('sha')
             name = elem.get('commit').get('author').get('name')
             print("{}: {}".format(sha, name))
         else:
