@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 '''network module'''
-import urllib.request
 
 
-with urllib.request.urlopen('https://intranet.hbtn.io/status')as response:
-    html = response.read().decode('utf-8')
-print("Body response:\n\t- type: {}\n\t- content: {}"
-      .format(type(html), html))
+import requests
+
+
+if __name__ == '__main__':
+    response = requests.get('https://intranet.hbtn.io/status')
+    print('Body response:\t- type: {}\t- content: {}'.
+          format(type(response.text), response.text))
