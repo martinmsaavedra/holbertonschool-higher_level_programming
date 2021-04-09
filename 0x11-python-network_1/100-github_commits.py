@@ -11,6 +11,6 @@ if __name__ == "__main__":
     response = requests.get(url)
     list_commits = response.json()
     for elem in list_commits:
-       sha = elem.get('parents')[0].get('sha')
-       name = elem.get('commit').get('author').get('name')
-       print(sha, name)
+        sha = elem.get('parents')[0].get('sha')
+        name = elem.get('commit').get('author').get('name')
+        print(sha, name)
