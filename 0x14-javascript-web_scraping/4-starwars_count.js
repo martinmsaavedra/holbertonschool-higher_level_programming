@@ -1,14 +1,19 @@
 #!/usr/bin/node
 
-
 const request = require('request');
-const url = process.argv[2].slice(0,-5) + "people/18";
-request(url, function (error, response, body) {
+const url = process.argv[2];
+request.get(url, function (error, response, body) {
   if (error) {
     console.error(error);
   }
-  array = JSON.parse(body).films;
-  console.log(array.length)
-  
+  const path = JSON.parse(body).results;
+  let count = 0;
+  for (let i = 0; i < path.length; i++) {
+    for (let j = 0; j < path[i].characters.length; j++) {
+      if (path[i].characters[j].endsWith('18/')) {
+        count++;
+      }
+    }
+  }
+  console.log(count);
 });
-
